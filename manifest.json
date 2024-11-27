@@ -1,0 +1,19 @@
+{
+  "manifest_version": 3,
+  "name": "Advent of Code Language Tracker",
+  "description": "Allows users to add language icons next to each day on the Advent of Code calendar.",
+  "version": "1.0.0",
+  "permissions": ["storage"],
+  "action": {
+    "default_popup": "popup/index.html"
+  },
+  "content_scripts": [
+    {
+      "matches": ["https://adventofcode.com/*"],
+      "js": ["scripts/calendar.js"]
+    }
+  ],
+  "background": {
+    "service_worker": "scripts/debug.js"
+  }
+}
